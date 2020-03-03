@@ -14,6 +14,7 @@ public class PlayTicTacToe {
 	}
 
 	public void playGame() throws CellAlreadyOccupiedException, InvalidCellRangeException {
+		
 		displayInstructions();
 
 		Scanner scan = new Scanner(System.in);
@@ -24,7 +25,7 @@ public class PlayTicTacToe {
 			int row;
 			int col;
 			LOGGER.info(
-					"Please provide your inputs in a row column fashion with an e:: Player " + game.gameBoard.getNextSymbol() + ", enter an empty row and column to place your mark!");
+					"Please provide your inputs in a row column fashion with an empty space:: Player " + game.gameBoard.getNextSymbol() + ", enter an empty row and column to place your mark!");
 			row = scan.nextInt();
 			col = scan.nextInt();
 			game.play(row, col);
@@ -40,7 +41,7 @@ public class PlayTicTacToe {
 		}
 	}
 
-	public static void displayInstructions() {
+	public void displayInstructions() {
 
 		StringBuilder builder = new StringBuilder();
 
