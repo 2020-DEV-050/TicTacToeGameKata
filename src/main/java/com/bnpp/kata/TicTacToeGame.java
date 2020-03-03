@@ -11,7 +11,7 @@ public class TicTacToeGame {
 		return gameBoard.getSymbolAt(row, column);
 	}
 
-	public void play(final int row, final int column, final char player) {
-		gameBoard.drawSymbolAt(row, column, player);
+	public void play(final int row, final int column) {
+		gameBoard.drawSymbolAt(row, column);
 	}
 }
