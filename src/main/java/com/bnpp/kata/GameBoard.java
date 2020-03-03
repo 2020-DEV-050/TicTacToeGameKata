@@ -74,6 +74,19 @@ public class GameBoard {
 		return isLeftDiagonalElementsAreEqual;
 	}
 
+	public boolean isRightTopToLeftBottomDiagonalCellsAreMarkedBySameSymbol() {
+		boolean isRightDiagonalElementsAreEqual = true;
+		int length = cells.length;
+		int cellContentToCompare = cells[ZERO][length - ONE];
+		for (int row = 0, column = length - ONE; row < length; row++, column--) {
+			if (cells[row][column] != cellContentToCompare || cellContentToCompare == EMPTY) {
+				isRightDiagonalElementsAreEqual = false;
+				break;
+			}
+		}
+		return isRightDiagonalElementsAreEqual;
+	}
+
 	private boolean isCellContentsAreEqual(char cellContentInputOne, char cellContentInputTwo,
 			char cellContentInputThree) {
 		return ((cellContentInputOne != EMPTY) && (cellContentInputOne == cellContentInputTwo)

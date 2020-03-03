@@ -95,4 +95,17 @@ public class GameBoardTest {
 		assertThat(board.isLeftTopToRightBottomDiagonalCellsAreMarkedBySameSymbol(), CoreMatchers.is(true));
 
 	}
+	
+	@Test
+	public void shouldReturnTrueWhenRightTopToLeftBottomDiagonalElementsAreMarkedBySameSymbol() {
+
+		board.drawSymbolAt(ZERO, TWO);
+		board.drawSymbolAt(ZERO, ZERO);
+		board.drawSymbolAt(ONE, ONE);
+		board.drawSymbolAt(ONE, TWO);
+		board.drawSymbolAt(TWO, ZERO);
+		
+		assertThat(board.isRightTopToLeftBottomDiagonalCellsAreMarkedBySameSymbol(), CoreMatchers.is(true));
+
+	}
 }
