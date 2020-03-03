@@ -1,6 +1,8 @@
 package com.bnpp.kata;
 
 public class GameBoard {
+	private static final char SYMBOL_O = 'O';
+	private static final char SYMBOL_X = 'X';
 	private static final int THREE = 3;
 	private char[][] cells;
 	private char currentSymbol;
@@ -19,11 +21,7 @@ public class GameBoard {
 	}
 
 	private char getNextSymbol() {
-		if ('X' == currentSymbol) {
-			return 'O';
-		} else {
-			return 'X';
-		}
+		return SYMBOL_X == currentSymbol ? SYMBOL_O : SYMBOL_X;
 	}
 
 	public char getCurrentSymbol() {
