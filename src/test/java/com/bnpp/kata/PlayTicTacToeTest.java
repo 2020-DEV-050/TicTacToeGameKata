@@ -23,6 +23,11 @@ public class PlayTicTacToeTest {
 		PlayTicTacToe.displayInstructions();
 	}
 	
+	@Test
+	public void instructionsShouldBeDisplayedFirstBeforeStartOfTheGame() throws CellAlreadyOccupiedException, InvalidCellRangeException{
+		PlayTicTacToe.playGame();
+	}
+	
 	
 	
 

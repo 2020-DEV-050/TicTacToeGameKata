@@ -13,6 +13,7 @@ public class PlayTicTacToe {
 	}
 
 	static void playGame() throws CellAlreadyOccupiedException, InvalidCellRangeException {
+		displayInstructions();
 		Scanner scan = new Scanner(System.in);
 		TicTacToeGame game = new TicTacToeGame();
 		do {
