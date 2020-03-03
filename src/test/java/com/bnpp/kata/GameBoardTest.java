@@ -68,4 +68,17 @@ public class GameBoardTest {
 		assertThat(board.isAnyHorizontalCellsMarkedBySameSymbol(), CoreMatchers.is(true));
 
 	}
+	
+	@Test
+	public void shouldValidateWhetherAnyVerticalCellsAreMarkedBySameSymbol() {
+
+		board.drawSymbolAt(ZERO, ZERO);
+		board.drawSymbolAt(TWO, TWO);
+		board.drawSymbolAt(ONE, ZERO);
+		board.drawSymbolAt(ONE, TWO);
+		board.drawSymbolAt(TWO, ZERO);
+		
+		assertThat(board.isAnyVerticalCellsMarkedBySameSymbol(), CoreMatchers.is(true));
+
+	}
 }

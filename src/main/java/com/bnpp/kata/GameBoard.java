@@ -52,9 +52,19 @@ public class GameBoard {
 		return false;
 	}
 
+	public boolean isAnyVerticalCellsMarkedBySameSymbol() {
+		for (int column = ZERO; column <= TWO; column++) {
+			if (isCellContentsAreEqual(cells[ZERO][column], cells[ONE][column], cells[TWO][column])) {
+				return true;
+			}
+		}
+		return false;
+	}
+
 	private boolean isCellContentsAreEqual(char cellContentInputOne, char cellContentInputTwo,
 			char cellContentInputThree) {
 		return ((cellContentInputOne != EMPTY) && (cellContentInputOne == cellContentInputTwo)
 				&& (cellContentInputTwo == cellContentInputThree));
 	}
+
 }
