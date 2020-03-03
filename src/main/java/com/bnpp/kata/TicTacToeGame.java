@@ -22,9 +22,9 @@ public class TicTacToeGame {
 		gameBoard.drawSymbolAt(row, column);
 
 		if (gameBoard.isAnyHorizontalCellsMarkedBySameSymbol()) {
-			return getCurrentPlayer() + " is the Winner!";
+			return getCurrentPlayer() + GameResultEnum.WINS.value;
 		}
-		return "Game Continues";
+		return GameResultEnum.CONTINUES.value;
 	}
 
 	private char getCurrentPlayer() {
