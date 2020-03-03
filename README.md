@@ -80,7 +80,6 @@ Open a command prompt and goto the project(extracted) folder and execute below c
 mvn clean
 mvn install
 After completion of above steps, the report will be available in below path
-
 <PROJECT_ROOT_FOLDER>\target\site\jacoco\index.html
 ```
 # Steps to run the application in command prompt
@@ -93,7 +92,7 @@ and execute below command
 java -classpath .\ com.bnpp.kata.PlayTicTacToe 
 Press Enter
 Then give row value to be placed, space seperation followed by column value to be placed as below
-0 1
+0 1 [in words : Zero space One]
 
 Please provide the row and column values until the game ends!!
 
