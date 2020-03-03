@@ -1,7 +1,7 @@
 package com.bnpp.kata;
 
 public enum GameResultEnum {
-	WINS(" is the Winner!"), CONTINUES(" Game Continues");
+	WINS(" is the Winner!"), CONTINUES(" Game Continues"), DRAW("Game is Draw");
 
 	public final String value;
 

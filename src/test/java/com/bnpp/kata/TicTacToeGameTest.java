@@ -113,7 +113,7 @@ public class TicTacToeGameTest {
 		game.play(TWO, ONE);
 		game.play(ZERO, ONE);
 
-		assertThat(game.play(TWO, ZERO), CoreMatchers.is("Game is Draw"));
+		assertThat(game.play(TWO, ZERO), CoreMatchers.is(GameResultEnum.DRAW.value));
 
 	}
 }

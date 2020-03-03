@@ -20,7 +20,7 @@ public class TicTacToeGame {
 		if (isWinner()) {
 			return getCurrentPlayer() + GameResultEnum.WINS.value;
 		} else if (gameBoard.isCellsFullyOccupiedBySymbols()) {
-			return "Game is Draw";
+			return GameResultEnum.DRAW.value;
 		}
 		return GameResultEnum.CONTINUES.value;
 	}
