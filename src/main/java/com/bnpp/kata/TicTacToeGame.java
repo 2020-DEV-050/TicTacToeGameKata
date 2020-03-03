@@ -21,7 +21,7 @@ public class TicTacToeGame {
 		}
 		gameBoard.drawSymbolAt(row, column);
 
-		if (gameBoard.isAnyHorizontalCellsMarkedBySameSymbol()) {
+		if (gameBoard.isAnyHorizontalCellsMarkedBySameSymbol() || gameBoard.isAnyVerticalCellsMarkedBySameSymbol()) {
 			return getCurrentPlayer() + GameResultEnum.WINS.value;
 		}
 		return GameResultEnum.CONTINUES.value;
