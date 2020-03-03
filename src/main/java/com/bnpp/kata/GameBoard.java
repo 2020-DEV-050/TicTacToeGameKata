@@ -1,6 +1,7 @@
 package com.bnpp.kata;
 
 public class GameBoard {
+	private static final char EMPTY = '\0';
 	private static final int ZERO = 0;
 	private static final int TWO = 2;
 	private static final char SYMBOL_O = 'O';
@@ -32,7 +33,7 @@ public class GameBoard {
 	}
 
 	public boolean isCellEmpty(int row, int column) {
-		return cells[row][column] == '\0';
+		return cells[row][column] == EMPTY;
 	}
 
 	public boolean isValidCellRange(int row, int column) {
@@ -53,7 +54,7 @@ public class GameBoard {
 
 	private boolean isCellContentsAreEqual(char cellContentInputOne, char cellContentInputTwo,
 			char cellContentInputThree) {
-		return ((cellContentInputOne != '\0') && (cellContentInputOne == cellContentInputTwo)
+		return ((cellContentInputOne != EMPTY) && (cellContentInputOne == cellContentInputTwo)
 				&& (cellContentInputTwo == cellContentInputThree));
 	}
 }
