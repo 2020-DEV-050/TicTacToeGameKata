@@ -11,8 +11,11 @@ public class TicTacToeGame {
 		return gameBoard.getSymbolAt(row, column);
 	}
 
-	public void play(final int row, final int column) throws CellAlreadyOccupiedException {
-		if (!gameBoard.isCellEmpty(row, column)) {
+	public void play(final int row, final int column) throws CellAlreadyOccupiedException, InvalidCellRangeException {
+		if (!gameBoard.isValidCellRange(row, column)) {
+			throw new InvalidCellRangeException(
+					"Given cell is out of range, Please select any valid cell in the range of 0 to 2");
+		} else if (!gameBoard.isCellEmpty(row, column)) {
 			throw new CellAlreadyOccupiedException(
 					"Given cell is not empty as it is already occupied by another symbol, Please select any other valid cell");
 		}

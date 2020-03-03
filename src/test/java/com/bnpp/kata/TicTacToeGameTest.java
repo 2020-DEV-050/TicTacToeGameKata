@@ -19,7 +19,7 @@ public class TicTacToeGameTest {
 	}
 
 	@Test
-	public void playerOneShouldBeAbleToPlaceXInAnyCell() throws CellAlreadyOccupiedException {
+	public void playerOneShouldBeAbleToPlaceXInAnyCell() throws CellAlreadyOccupiedException, InvalidCellRangeException {
 
 		game.play(ZERO, ZERO);
 
@@ -27,9 +27,17 @@ public class TicTacToeGameTest {
 	}
 
 	@Test(expected = CellAlreadyOccupiedException.class)
-	public void shouldThroughExceptionWhenPlayerTryToFillInNonEmptyCell() throws CellAlreadyOccupiedException {
+	public void shouldThroughExceptionWhenPlayerTryToFillInNonEmptyCell() throws CellAlreadyOccupiedException, InvalidCellRangeException {
 
 		game.play(ZERO, ZERO);
 		game.play(ZERO, ZERO);
+	}
+	
+	@Test(expected = InvalidCellRangeException.class)
+	public void shouldThroughExceptionWhenPlayerTryToFillInACellOutOfRange()
+			throws InvalidCellRangeException, CellAlreadyOccupiedException {
+
+		game.play(ZERO, ZERO);
+		game.play(3, 3);
 	}
 }
