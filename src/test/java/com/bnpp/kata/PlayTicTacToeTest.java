@@ -12,5 +12,11 @@ public class PlayTicTacToeTest {
 		PlayTicTacToe playTicTacToe = new PlayTicTacToe();
 		assertNotNull(playTicTacToe);
 	}
+	
+	@Test
+	public void shouldBeAbleToCallPlayGameMethodInPlayTicTacToe(){
+		PlayTicTacToe playTicTacToe = new PlayTicTacToe();
+		playTicTacToe.playGame();
+	}
 
 }
