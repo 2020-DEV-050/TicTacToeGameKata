@@ -8,6 +8,7 @@ import org.junit.Test;
 
 public class GameBoardTest {
 
+	private static final int THREE = 3;
 	private static final char SYMBOL_O = 'O';
 	private static final int ONE = 1;
 	private static final char SYMBOL_X = 'X';
@@ -43,14 +44,14 @@ public class GameBoardTest {
 	@Test
 	public void shouldReturnTrueWhenInputCellValuesAreInValidRange() {
 
-		assertThat(board.isValidCellRange(0, 1), CoreMatchers.is(true));
+		assertThat(board.isValidCellRange(ZERO, ONE), CoreMatchers.is(true));
 
 	}
 	
 	@Test
 	public void shouldReturnFalseWhenInputCellValuesAreNotInValidRange() {
 
-		assertThat(board.isValidCellRange(3, 1), CoreMatchers.is(false));
+		assertThat(board.isValidCellRange(THREE, ONE), CoreMatchers.is(false));
 
 	}
 }

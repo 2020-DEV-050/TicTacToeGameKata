@@ -8,6 +8,7 @@ import org.junit.Test;
 
 public class TicTacToeGameTest {
 
+	private static final int THREE = 3;
 	private static final char PLAYER_X = 'X';
 	private static final int ZERO = 0;
 
@@ -38,6 +39,6 @@ public class TicTacToeGameTest {
 			throws InvalidCellRangeException, CellAlreadyOccupiedException {
 
 		game.play(ZERO, ZERO);
-		game.play(3, 3);
+		game.play(THREE, THREE);
 	}
 }
