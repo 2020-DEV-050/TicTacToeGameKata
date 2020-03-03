@@ -8,6 +8,7 @@ import org.junit.Test;
 
 public class TicTacToeGameTest {
 
+	private static final char PLAYER_O = 'O';
 	private static final int THREE = 3;
 	private static final char PLAYER_X = 'X';
 	private static final int ZERO = 0;
@@ -82,7 +83,7 @@ public class TicTacToeGameTest {
 		game.play(ONE, ONE);
 		game.play(TWO, ONE);
 
-		assertThat(game.play(TWO, TWO), CoreMatchers.is('O' + GameResultEnum.WINS.value));
+		assertThat(game.play(TWO, TWO), CoreMatchers.is(PLAYER_O + GameResultEnum.WINS.value));
 
 	}
 }
