@@ -17,5 +17,13 @@ public class PlayTicTacToeTest {
 	public void shouldBeAbleToPassInputsInConsoleWhileCallingplayGame() throws CellAlreadyOccupiedException, InvalidCellRangeException{
 		PlayTicTacToe.playGame();
 	}
+	
+	@Test
+	public void shouldBeAbleToDisplayInstructions() throws CellAlreadyOccupiedException, InvalidCellRangeException{
+		PlayTicTacToe.displayInstructions();
+	}
+	
+	
+	
 
 }
