@@ -8,12 +8,14 @@ public class PlayTicTacToe {
 	private final static Logger LOGGER = Logger.getLogger(PlayTicTacToe.class.getName());
 
 	public static void main(String[] args) throws CellAlreadyOccupiedException, InvalidCellRangeException {
-		playGame();
+		PlayTicTacToe playTicTacToe = new PlayTicTacToe();
+		playTicTacToe.playGame();
 
 	}
 
-	static void playGame() throws CellAlreadyOccupiedException, InvalidCellRangeException {
+	public void playGame() throws CellAlreadyOccupiedException, InvalidCellRangeException {
 		displayInstructions();
+
 		Scanner scan = new Scanner(System.in);
 		TicTacToeGame game = new TicTacToeGame();
 		do {
