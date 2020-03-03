@@ -86,4 +86,17 @@ public class TicTacToeGameTest {
 		assertThat(game.play(TWO, TWO), CoreMatchers.is(PLAYER_O + GameResultEnum.WINS.value));
 
 	}
+	
+	@Test
+	public void shouldDeclareWinnerWhenRightToptToLeftBottomDiagonalCellsAreMarkedBySamePlayer()
+			throws CellAlreadyOccupiedException, InvalidCellRangeException {
+
+		game.play(ZERO, TWO);
+		game.play(ZERO, ZERO);
+		game.play(ONE, ONE);
+		game.play(ONE, TWO);
+
+		assertThat(game.play(TWO, ZERO), CoreMatchers.is(PLAYER_X + GameResultEnum.WINS.value));
+
+	}
 }
