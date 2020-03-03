@@ -14,9 +14,8 @@ public class PlayTicTacToeTest {
 	}
 	
 	@Test
-	public void shouldBeAbleToCallPlayGameMethodInPlayTicTacToe(){
-		PlayTicTacToe playTicTacToe = new PlayTicTacToe();
-		playTicTacToe.playGame();
+	public void shouldBeAbleToPassInputsInConsoleWhileCallingplayGame() throws CellAlreadyOccupiedException, InvalidCellRangeException{
+		PlayTicTacToe.playGame();
 	}
 
 }

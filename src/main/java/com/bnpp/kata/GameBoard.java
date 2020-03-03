@@ -31,7 +31,7 @@ public class GameBoard {
 		noOfCellsFilled++;
 	}
 
-	private char getNextSymbol() {
+	char getNextSymbol() {
 		return SYMBOL_X == currentSymbol ? SYMBOL_O : SYMBOL_X;
 	}
 
