@@ -11,6 +11,8 @@ public class TicTacToeGameTest {
 	private static final int THREE = 3;
 	private static final char PLAYER_X = 'X';
 	private static final int ZERO = 0;
+	private static final int TWO = 2;
+	private static final int ONE = 1;
 
 	TicTacToeGame game;
 
@@ -20,7 +22,8 @@ public class TicTacToeGameTest {
 	}
 
 	@Test
-	public void playerOneShouldBeAbleToPlaceXInAnyCell() throws CellAlreadyOccupiedException, InvalidCellRangeException {
+	public void playerOneShouldBeAbleToPlaceXInAnyCell()
+			throws CellAlreadyOccupiedException, InvalidCellRangeException {
 
 		game.play(ZERO, ZERO);
 
@@ -28,17 +31,31 @@ public class TicTacToeGameTest {
 	}
 
 	@Test(expected = CellAlreadyOccupiedException.class)
-	public void shouldThroughExceptionWhenPlayerTryToFillInNonEmptyCell() throws CellAlreadyOccupiedException, InvalidCellRangeException {
+	public void shouldThroughExceptionWhenPlayerTryToFillInNonEmptyCell()
+			throws CellAlreadyOccupiedException, InvalidCellRangeException {
 
 		game.play(ZERO, ZERO);
 		game.play(ZERO, ZERO);
 	}
-	
+
 	@Test(expected = InvalidCellRangeException.class)
 	public void shouldThroughExceptionWhenPlayerTryToFillInACellOutOfRange()
 			throws InvalidCellRangeException, CellAlreadyOccupiedException {
 
 		game.play(ZERO, ZERO);
 		game.play(THREE, THREE);
+	}
+
+	@Test
+	public void shouldDeclareWinnerWhenAnyOfTheHorizontalRowsAreMarkedBySamePlayer()
+			throws CellAlreadyOccupiedException, InvalidCellRangeException {
+
+		game.play(ZERO, ZERO);
+		game.play(TWO, ONE);
+		game.play(ZERO, ONE);
+		game.play(ONE, TWO);
+
+		assertThat(game.play(ZERO, TWO), CoreMatchers.is(PLAYER_X + " is the Winner!"));
+
 	}
 }
