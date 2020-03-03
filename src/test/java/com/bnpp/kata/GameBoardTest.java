@@ -1,18 +1,27 @@
 package com.bnpp.kata;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertThat;
 
 import org.hamcrest.CoreMatchers;
+import org.junit.Before;
 import org.junit.Test;
 
 public class GameBoardTest {
 
+	private static final char SYMBOL_O = 'O';
+	private static final int ONE = 1;
 	private static final char SYMBOL_X = 'X';
 	private static final int ZERO = 0;
 
+	private GameBoard board;
+
+	@Before
+	public void init() {
+		board = new GameBoard();
+	}
+
 	@Test
 	public void playerOneShouldBeAbleToPlaceXInAnyCell() {
-		GameBoard board = new GameBoard();
 
 		board.drawSymbolAt(ZERO, ZERO);
 
@@ -21,14 +30,13 @@ public class GameBoardTest {
 
 	@Test
 	public void symbolsShouldGetChangeAlternatively() {
-		GameBoard board = new GameBoard();
 
-		board.drawSymbolAt(0, 0);
+		board.drawSymbolAt(ZERO, ZERO);
 
 		assertThat(board.getCurrentSymbol(), CoreMatchers.is(SYMBOL_X));
 
-		board.drawSymbolAt(1, 1);
+		board.drawSymbolAt(ONE, ONE);
 
-		assertThat(board.getCurrentSymbol(), CoreMatchers.is('O'));
+		assertThat(board.getCurrentSymbol(), CoreMatchers.is(SYMBOL_O));
 	}
 }
