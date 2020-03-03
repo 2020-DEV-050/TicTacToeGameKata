@@ -24,7 +24,7 @@ public class PlayTicTacToe {
 			int row;
 			int col;
 			LOGGER.info(
-					"Player " + game.gameBoard.getNextSymbol() + ", enter an empty row and column to place your mark!");
+					"Please provide your inputs in a row column fashion with an e:: Player " + game.gameBoard.getNextSymbol() + ", enter an empty row and column to place your mark!");
 			row = scan.nextInt();
 			col = scan.nextInt();
 			game.play(row, col);
