@@ -108,4 +108,20 @@ public class GameBoardTest {
 		assertThat(board.isRightTopToLeftBottomDiagonalCellsAreMarkedBySameSymbol(), CoreMatchers.is(true));
 
 	}
+	
+	@Test
+	public void shouldReturnTrueWhenAllTheCellsAreMarkedInABoard() {
+		
+		board.drawSymbolAt(ONE, ONE);
+		board.drawSymbolAt(ZERO, TWO);
+		board.drawSymbolAt(ONE, TWO);
+		board.drawSymbolAt(ONE, ZERO);
+		board.drawSymbolAt(ZERO, ZERO);
+		board.drawSymbolAt(TWO, TWO);
+		board.drawSymbolAt(TWO, ONE);
+		board.drawSymbolAt(ZERO, ONE);
+		board.drawSymbolAt(TWO, ZERO);
+		
+		assertThat(board.isCellsFullyOccupiedBySymbols(), CoreMatchers.is(true));
+	}
 }

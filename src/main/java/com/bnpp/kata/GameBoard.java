@@ -87,6 +87,18 @@ public class GameBoard {
 		return isRightDiagonalElementsAreEqual;
 	}
 
+	public Boolean isCellsFullyOccupiedBySymbols() {
+		boolean isBoardFullyOccupied = true;
+		for (int row = ZERO; row < THREE; row++) {
+			for (int column = ZERO; column < THREE; column++) {
+				if (cells[row][column] == EMPTY) {
+					isBoardFullyOccupied = false;
+				}
+			}
+		}
+		return isBoardFullyOccupied;
+	}
+
 	private boolean isCellContentsAreEqual(char cellContentInputOne, char cellContentInputTwo,
 			char cellContentInputThree) {
 		return ((cellContentInputOne != EMPTY) && (cellContentInputOne == cellContentInputTwo)
