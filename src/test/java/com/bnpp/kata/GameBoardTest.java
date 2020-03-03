@@ -5,17 +5,17 @@ import static org.junit.Assert.*;
 import org.hamcrest.CoreMatchers;
 import org.junit.Test;
 
-public class TicTacToeGameTest {
+public class GameBoardTest {
 
 	private static final char PLAYER_X = 'X';
 	private static final int ZERO = 0;
 
 	@Test
 	public void playerOneShouldBeAbleToPlaceXInAnyCell() {
-		TicTacToeGame game = new TicTacToeGame();
+		GameBoard board = new GameBoard();
 
-		game.play(ZERO, ZERO, PLAYER_X);
+		board.drawSymbolAt(ZERO, ZERO, PLAYER_X);
 
-		assertThat(game.getPlayerAt(ZERO, ZERO), CoreMatchers.is(PLAYER_X));
+		assertThat(board.getSymbolAt(ZERO, ZERO), CoreMatchers.is(PLAYER_X));
 	}
 }
