@@ -6,6 +6,7 @@ public class GameBoard {
 	private static final char SYMBOL_O = 'O';
 	private static final char SYMBOL_X = 'X';
 	private static final int THREE = 3;
+	private static final int ONE = 1;
 	private char[][] cells;
 	private char currentSymbol;
 
@@ -29,15 +30,30 @@ public class GameBoard {
 	public char getCurrentSymbol() {
 		return currentSymbol;
 	}
-	
+
 	public boolean isCellEmpty(int row, int column) {
 		return cells[row][column] == '\0';
 	}
-	
+
 	public boolean isValidCellRange(int row, int column) {
 		if (row > TWO || row < ZERO || column > TWO || column < ZERO) {
 			return false;
 		}
 		return true;
+	}
+
+	public boolean isAnyHorizontalCellsMarkedBySameSymbol() {
+		for (int row = ZERO; row <= TWO; row++) {
+			if (isCellContentsAreEqual(cells[row][ZERO], cells[row][ONE], cells[row][TWO])) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	private boolean isCellContentsAreEqual(char cellContentInputOne, char cellContentInputTwo,
+			char cellContentInputThree) {
+		return ((cellContentInputOne != '\0') && (cellContentInputOne == cellContentInputTwo)
+				&& (cellContentInputTwo == cellContentInputThree));
 	}
 }

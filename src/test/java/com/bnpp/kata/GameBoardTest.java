@@ -11,6 +11,7 @@ public class GameBoardTest {
 	private static final int THREE = 3;
 	private static final char SYMBOL_O = 'O';
 	private static final int ONE = 1;
+	private static final int TWO = 2;
 	private static final char SYMBOL_X = 'X';
 	private static final int ZERO = 0;
 
@@ -52,6 +53,19 @@ public class GameBoardTest {
 	public void shouldReturnFalseWhenInputCellValuesAreNotInValidRange() {
 
 		assertThat(board.isValidCellRange(THREE, ONE), CoreMatchers.is(false));
+
+	}
+	
+	@Test
+	public void shouldValidateWhetherAnyHorizontalCellValuesAreMarkedBySameSymbol() {
+
+		board.drawSymbolAt(ZERO, ZERO);
+		board.drawSymbolAt(TWO, ONE);
+		board.drawSymbolAt(ZERO, ONE);
+		board.drawSymbolAt(ONE, TWO);
+		board.drawSymbolAt(ZERO, TWO);
+		
+		assertThat(board.isAnyHorizontalCellsMarkedBySameSymbol(), CoreMatchers.is(true));
 
 	}
 }
