@@ -10,6 +10,7 @@ public class GameBoard {
 	private static final int ONE = 1;
 	private char[][] cells;
 	private char currentSymbol;
+	private int noOfCellsFilled = 0;
 
 	public GameBoard() {
 		cells = new char[THREE][THREE];
@@ -22,6 +23,7 @@ public class GameBoard {
 	public void drawSymbolAt(final int row, final int column) {
 		currentSymbol = getNextSymbol();
 		cells[row][column] = currentSymbol;
+		noOfCellsFilled++;
 	}
 
 	private char getNextSymbol() {
@@ -88,15 +90,7 @@ public class GameBoard {
 	}
 
 	public Boolean isCellsFullyOccupiedBySymbols() {
-		boolean isBoardFullyOccupied = true;
-		for (int row = ZERO; row < THREE; row++) {
-			for (int column = ZERO; column < THREE; column++) {
-				if (cells[row][column] == EMPTY) {
-					isBoardFullyOccupied = false;
-				}
-			}
-		}
-		return isBoardFullyOccupied;
+		return noOfCellsFilled == 9;
 	}
 
 	private boolean isCellContentsAreEqual(char cellContentInputOne, char cellContentInputTwo,
