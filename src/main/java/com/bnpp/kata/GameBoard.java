@@ -1,6 +1,7 @@
 package com.bnpp.kata;
 
 public class GameBoard {
+	private static final int BOARD_MAX_BOUND = 9;
 	private static final char EMPTY = '\0';
 	private static final int ZERO = 0;
 	private static final int TWO = 2;
@@ -90,7 +91,7 @@ public class GameBoard {
 	}
 
 	public Boolean isCellsFullyOccupiedBySymbols() {
-		return noOfCellsFilled == 9;
+		return noOfCellsFilled == BOARD_MAX_BOUND;
 	}
 
 	private boolean isCellContentsAreEqual(char cellContentInputOne, char cellContentInputTwo,
