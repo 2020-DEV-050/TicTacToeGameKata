@@ -39,4 +39,18 @@ public class GameBoardTest {
 
 		assertThat(board.getCurrentSymbol(), CoreMatchers.is(SYMBOL_O));
 	}
+
+	@Test
+	public void shouldReturnTrueWhenInputCellValuesAreInValidRange() {
+
+		assertThat(board.isValidCellRange(0, 1), CoreMatchers.is(true));
+
+	}
+	
+	@Test
+	public void shouldReturnFalseWhenInputCellValuesAreNotInValidRange() {
+
+		assertThat(board.isValidCellRange(3, 1), CoreMatchers.is(false));
+
+	}
 }

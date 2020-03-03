@@ -31,4 +31,11 @@ public class GameBoard {
 	public boolean isCellEmpty(int row, int column) {
 		return cells[row][column] == '\0';
 	}
+	
+	public boolean isValidCellRange(int row, int column) {
+		if (row > 2 || row < 0 || column > 2 || column < 0) {
+			return false;
+		}
+		return true;
+	}
 }
