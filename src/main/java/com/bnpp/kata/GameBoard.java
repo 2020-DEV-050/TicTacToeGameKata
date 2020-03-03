@@ -27,4 +27,8 @@ public class GameBoard {
 	public char getCurrentSymbol() {
 		return currentSymbol;
 	}
+	
+	public boolean isCellEmpty(int row, int column) {
+		return cells[row][column] == '\0';
+	}
 }
