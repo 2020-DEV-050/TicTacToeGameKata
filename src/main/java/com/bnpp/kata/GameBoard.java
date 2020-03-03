@@ -1,6 +1,8 @@
 package com.bnpp.kata;
 
 public class GameBoard {
+	private static final int ZERO = 0;
+	private static final int TWO = 2;
 	private static final char SYMBOL_O = 'O';
 	private static final char SYMBOL_X = 'X';
 	private static final int THREE = 3;
@@ -33,7 +35,7 @@ public class GameBoard {
 	}
 	
 	public boolean isValidCellRange(int row, int column) {
-		if (row > 2 || row < 0 || column > 2 || column < 0) {
+		if (row > TWO || row < ZERO || column > TWO || column < ZERO) {
 			return false;
 		}
 		return true;
