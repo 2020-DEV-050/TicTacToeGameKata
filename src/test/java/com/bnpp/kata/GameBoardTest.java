@@ -124,4 +124,14 @@ public class GameBoardTest {
 		
 		assertThat(board.isCellsFullyOccupiedBySymbols(), CoreMatchers.is(true));
 	}
+	
+	@Test
+	public void shouldBeAbleToPrintTheGameBoardAfterPlayerMoves(){
+		
+		board.drawSymbolAt(ONE, ONE);
+		board.drawSymbolAt(ZERO, TWO);
+		board.drawSymbolAt(ONE, TWO);
+		
+		board.printBoard();
+	}
 }

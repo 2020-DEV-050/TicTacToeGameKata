@@ -100,4 +100,17 @@ public class GameBoard {
 				&& (cellContentInputTwo == cellContentInputThree));
 	}
 
+	public void printBoard() {
+		System.out.println("-------------");
+
+		for (int row = ZERO; row < THREE; row++) {
+			System.out.print("| ");
+			for (int column = 0; column < 3; column++) {
+				System.out.print(cells[row][column] + " | ");
+			}
+			System.out.println();
+			System.out.println("-------------");
+		}
+	}
+
 }
