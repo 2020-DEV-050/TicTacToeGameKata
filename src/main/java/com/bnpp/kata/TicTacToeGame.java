@@ -35,7 +35,8 @@ public class TicTacToeGame {
 	}
 
 	private boolean isWinner() {
-		return gameBoard.isAnyHorizontalCellsMarkedBySameSymbol() || gameBoard.isAnyVerticalCellsMarkedBySameSymbol();
+		return gameBoard.isAnyHorizontalCellsMarkedBySameSymbol() || gameBoard.isAnyVerticalCellsMarkedBySameSymbol()
+				|| gameBoard.isLeftTopToRightBottomDiagonalCellsAreMarkedBySameSymbol();
 	}
 
 	private char getCurrentPlayer() {
