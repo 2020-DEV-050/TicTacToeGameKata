@@ -1,6 +1,10 @@
 package com.bnpp.kata;
 
+import java.util.logging.Logger;
+
 public class GameBoard {
+
+	private final static Logger LOGGER = Logger.getLogger(GameBoard.class.getName());
 	private static final int BOARD_MAX_BOUND = 9;
 	private static final char EMPTY = '\0';
 	private static final int ZERO = 0;
@@ -101,16 +105,19 @@ public class GameBoard {
 	}
 
 	public void printBoard() {
-		System.out.println("-------------");
+		StringBuffer boardPrinter = new StringBuffer();
+		boardPrinter.append("\n-------------\n");
 
 		for (int row = ZERO; row < THREE; row++) {
-			System.out.print("| ");
-			for (int column = 0; column < 3; column++) {
-				System.out.print(cells[row][column] + " | ");
+			boardPrinter.append("| ");
+			for (int column = ZERO; column < THREE; column++) {
+				boardPrinter.append(cells[row][column] + " | ");
 			}
-			System.out.println();
-			System.out.println("-------------");
+			boardPrinter.append("\n");
+			boardPrinter.append("-------------\n");
 		}
+
+		LOGGER.info(boardPrinter.toString());
 	}
 
 }
